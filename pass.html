@@ -25,7 +25,12 @@
         <p id="result">This text will be replaced </p>
     </div>
 
+    <div class="container">
+        <img id="image" src="./Images/giraffe.jpg" class="img-fluid" alt="Giraffe" height="200" width="200" onclick="newImage()">
+    </div>
+
     <script>
+        let usingImage = 1;
         let correct = 0;
         let wrong = 0;
 
@@ -43,6 +48,26 @@
                 alert("Access denied")
                 wrong = wrong + 1
                 out.innerHTML = "correct : " + correct + " " + "wrong : " + wrong
+            }
+        }
+
+        function newImage() {
+            image = document.getElementById("image")
+            switch (usingImage) {
+                case 1:
+                    image.src = "Images/giraffe.jpg"
+                    usingImage = usingImage + 1
+                    break
+                case 2:
+                    image.src = "Images/lion.jpg"
+                    usingImage = usingImage + 1
+                    break
+                case 3:
+                    image.src = "Images/ox.jpg"
+                    usingImage = usingImage + 1
+                    break
+                default:
+                    break
             }
         }
     </script>

@@ -11,41 +11,63 @@
 
     <div class="container">
         <form>
-            <label for="form_electric">electric </label>
-            <input type="checkbox" id="check_electric" value="electric"> <br>
+            <input type="checkbox" id="check_electric" name="check_electric" value="electric">
+            <label for="check_electric">electric </label><br>
 
-            <label for="form_ac">ac </label>
-            <input type="checkbox" id="check_ac" value="ac"> <br>
+            <input type="checkbox" id="check_ac" name="check_ac" value="ac">
+            <label for="check_ac">ac </label><br>
 
-            <label for="form_gps">gps </label>
-            <input type="checkbox" id="check_gps" value="gps"> <br>
+            <input type="checkbox" id="check_gps" name="check_gps" value="gps">
+            <label for="check_gps">gps </label><br>
 
-            <input type="button" onclick="orderCar()" value="Order a car">
+            <input type="button" onclick="orderCar()" value="Order a Car">
+            <br>
+        </form>
+    </div>
+    <div class="container">
+        <form>
+            <label for="form_property">Enter a property</label>
+            <input type="text" id="form_property" name="form_property" value="color"><br>
+
+            <label for="form_value">Enter a value</label>
+            <input type="text" id="form_value" name="form_value"><br>
+
+            <input type="button" onclick="updateCar()" value="Update the Car">
         </form>
     </div>
 
     <div class="container">
         <p id="result">This text will be replaced </p>
     </div>
-
     <script>
+        var my_car = {}
+
         function orderCar() {
-            var my_car = {}
             my_car = {}
             if (document.getElementById("check_electric").checked == true)
-                my_car['hat'] = 'true'
+                my_car['electric'] = 'true'
             else
-                my_car['hat'] = 'false'
+                my_car['electric'] = 'false'
 
             if (document.getElementById("check_ac").checked == true)
-                my_car['scarf'] = 'true'
+                my_car['ac'] = 'true'
             else
-                my_car['scarf'] = 'false'
+                my_car['ac'] = 'false'
 
             if (document.getElementById("check_gps").checked == true)
-                my_car['shirt'] = 'true'
+                my_car['gps'] = 'true'
             else
-                my_car['shirt'] = 'false'
+                my_car['gps'] = 'false'
+            document.getElementById("result").innerHTML = JSON.stringify(my_car)
+            console.log(my_car)
+        }
+    </script>
+
+    <script>
+        function updateCar() {
+            form_property = document.getElementById("form_property").value
+            form_value = document.getElementById("form_value").value
+            my_car[form_property] = form_value
             document.getElementById("result").innerHTML = JSON.stringify(my_car)
             console.log(my_car)
         }

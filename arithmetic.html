@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Arithmetic Page</title>
+</head>
+
+<body>
+
+    <h2>Maheshwar Reddy Goli computes</h2>
+
+    <form>
+        <label for="first_value">Enter a base </label>
+        <input type="number" id="first_value" name="first_value" value=10> <br>
+
+        <label for="second_value">Enter an exponent </label>
+        <input type="number" id="second_value" name="second_value" value=2> <br>
+
+        <input type="button" onclick="powers()" value="compute">
+    </form>
+
+
+    <p id="result">This text will be replaced </p>
+
+    <script>
+        function powers() {
+            console.log("Getting form values")
+            base = document.getElementById("first_value").value
+            exponent = document.getElementById("second_value").value
+
+            let result = ""
+
+            for (first = 1; first <= exponent; first++) {
+                result = result + " " +
+                    Math.pow(base, first)
+
+            }
+            document.getElementById("result").innerHTML = "powers of " + base + " are: " + result
+        }
+    </script>
+
+</body>
+
+</html>

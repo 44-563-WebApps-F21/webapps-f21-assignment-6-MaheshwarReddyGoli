@@ -3,29 +3,37 @@
 
 <head>
     <title>Arithmetic Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
     <h2>Maheshwar Reddy Goli computes</h2>
 
-    <div class="container"></div>
-    <form>
-        <label for="first_value">Enter a base </label>
-        <input type="number" id="first_value" name="first_value" value=10> <br>
-
-        <label for="second_value">Enter an exponent </label>
-        <input type="number" id="second_value" name="second_value" value=2> <br>
-
-        <input type="button" onclick="powers()" value="compute">
-    </form>
+    <div class="container border bg-info">
+        <form>
+            <div class="form-group row">
+                <label for="first_value" class="col-sm-2 col-form-label">Enter a base </label>
+                <input type="number" class="col-sm-2 form-control" id="first_value" name="first_value" value=10> <br>
+            </div>
+            <div class="form-group row">
+                <label for="second_value" class="col-sm-2 col-form-label">Enter an exponent </label>
+                <input type="number" class="col-sm-2 form-control" id="second_value" name="second_value" value=2> <br>
+            </div>
+            <input type="button" class="col-sm-2 btn btn-primary" onclick="powers()" value="compute">
+        </form>
     </div>
 
-    <div class="container">
+    <div class="container border bg-secondary">
         <p id="result">This text will be replaced </p>
     </div>
 
-    <div class="container">
+    <div class="container border bg-success">
         <form>
             <input type="radio" id="add" name="arith_oper" onclick="processRadio()">
             <label for="add">+</label><br>
@@ -38,8 +46,8 @@
         </form>
     </div>
 
-    <div>
-        <p class="container" id="res">Results of Radio buttons will be shown here</p>
+    <div class="container border bg-secondary">
+        <p id="res">Results of Radio buttons will be shown here</p>
     </div>
 
     <script>

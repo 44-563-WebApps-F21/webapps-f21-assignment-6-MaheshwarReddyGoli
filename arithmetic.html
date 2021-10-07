@@ -15,7 +15,7 @@
 
     <h2>Maheshwar Reddy Goli computes</h2>
 
-    <div class="container border bg-info">
+    <div class="container border bg-secondary">
         <form>
             <div class="form-group row">
                 <label for="first_value" class="col-sm-2 col-form-label">Enter a base </label>
@@ -25,15 +25,15 @@
                 <label for="second_value" class="col-sm-2 col-form-label">Enter an exponent </label>
                 <input type="number" class="col-sm-2 form-control" id="second_value" name="second_value" value=2> <br>
             </div>
-            <input type="button" class="col-sm-2 btn btn-primary" onclick="powers()" value="compute">
+            <input type="button" class="col-sm-2 btn btn-danger" onclick="powers()" value="compute">
         </form>
     </div>
 
-    <div class="container border bg-secondary">
-        <p id="result">This text will be replaced </p>
+    <div class="container border bg-light">
+        <p id="result" style="color: crimson;">This text will be replaced </p>
     </div>
 
-    <div class="container border bg-success">
+    <div class="container border bg-secondary">
         <form>
             <input type="radio" id="add" name="arith_oper" onclick="processRadio()">
             <label for="add">+</label><br>
@@ -46,8 +46,8 @@
         </form>
     </div>
 
-    <div class="container border bg-secondary">
-        <p id="res">Results of Radio buttons will be shown here</p>
+    <div class="container border bg-light">
+        <p id="res" style="color: crimson;">Results of Radio buttons will be shown here</p>
     </div>
 
     <script>

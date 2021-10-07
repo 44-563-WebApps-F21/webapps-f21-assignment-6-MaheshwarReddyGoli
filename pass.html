@@ -15,7 +15,7 @@
 
     <h2>Pass phrase by Maheshwar Reddy Goli</h2>
 
-    <div class="container border bg-success">
+    <div class="container border bg-secondary">
         <form>
             <div class="form-grop row">
                 <label for="form1_age" class="col-sm-3 col-form-label">Enter the secret phrase </label>
@@ -31,13 +31,13 @@
             </div>
 
             <div>
-                <input type="button" class="col-sm-3 btn btn-primary" onclick="processPhrase()" value="Check the phrase">
+                <input type="button" class="col-sm-3 btn btn-danger" onclick="processPhrase()" value="Check the phrase">
             </div>
         </form>
     </div>
 
-    <div class="container border bg-info">
-        <p id="result">This text will be replaced </p>
+    <div class="container border bg-light">
+        <p id="result" style="color: crimson;">This text will be replaced </p>
     </div>
 
     <div class="container">
@@ -48,6 +48,7 @@
         let usingImage = 1;
         let correct = 0;
         let wrong = 0;
+        var temp = 0;
 
         function processPhrase() {
             console.log("Getting form values")
@@ -56,14 +57,25 @@
 
             out = document.getElementById("result")
             if (password == guess) {
-                alert("Access allowed")
+                temp = 0;
                 correct = correct + 1
                 out.innerHTML = "correct : " + correct + " " + "wrong : " + wrong
+                alert("Access allowed")
             } else {
-                alert("Access denied")
                 wrong = wrong + 1
+                temp = temp + 1
                 out.innerHTML = "correct : " + correct + " " + "wrong : " + wrong
+                alert("Access denied")
+                if (temp >= 3) {
+                    if (wrong >= 3) {
+                        passPhrase()
+                    }
+                }
             }
+        }
+
+        function passPhrase() {
+            alert("Account Locked")
         }
 
         function newImage() {

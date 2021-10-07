@@ -15,7 +15,7 @@
 
     <h2>Maheshwar Reddy Goli orders a car</h2>
 
-    <div class="container border bg-info" style="color:black">
+    <div class="container border bg-secondary" style="color:black">
         <form>
             <input type="checkbox" id="check_electric" name="check_electric" value="electric">
             <label for="check_electric" class="">electric </label><br>
@@ -26,12 +26,12 @@
             <input type="checkbox" id="check_gps" name="check_gps" value="gps">
             <label for="check_gps">gps </label><br>
 
-            <input type="button" class="col-sm-3 btn-primary" onclick="orderCar()" value="Order a Car">
+            <input type="button" class="col-sm-3 btn-danger" onclick="orderCar()" value="Order a Car">
             <br>
         </form>
     </div>
 
-    <div class="container border bg-primary">
+    <div class="container border bg-secondary">
         <form>
             <div class="form-group row">
                 <label for="form_property" class="col-sm-2 col-form-label">Enter a property</label>
@@ -41,12 +41,12 @@
                 <label for="form_value" class="col-sm-2 col-form-label">Enter a value</label>
                 <input type="text" class="col-sm-4 form-control" id="form_value" name="form_value"><br>
             </div>
-            <input type="button" class="col-sm-3 btn-primary" onclick="updateCar()" value="Update the Car">
+            <input type="button" class="col-sm-3 btn-danger" onclick="updateCar()" value="Update the Car">
         </form>
     </div>
 
-    <div class="container border bg-secondary">
-        <p id="result">This text will be replaced </p>
+    <div class="container border bg-light">
+        <p id="result" style="color: crimson;">This text will be replaced </p>
     </div>
     <script>
         var my_car = {}
